@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notetaking Server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href = "css/style.css">
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+    <script src="js/main.js"></script>
+    <section id="submission" class="section section-on-footer">
+        <div class="container">
+          <div class="row bordered">
+            <div class="col-12 text-center">
+              <h2 class="section-title fade-in">Notes</h2>
+            </div>
+            <div class="col-lg-8 mx-auto fade-in">
+              <div class="bg-white rounded text-center p-5 shadow-down">
+                <h4 class="mb-80">Submission Form</h4>
+                <form id="note_entry" action="#" method="#" class="row">
+                  <div class="col-md-6">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" class="form-control px-0 mb-4" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="date" id="date" name="date" placeholder="Date" class="form-control px-0 mb-4" required>
+                  </div>
+                  <div class="col-12">
+                    <textarea name="content" rows="10" id="content" class="form-control px-0 mb-4"
+                      placeholder="Enter here" required></textarea>
+                  </div>
+                  <div class="col-lg-6 col-10 mx-auto">
+                    <button id = "btn" class="btn w-100"><a class="Submit">Send</a></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>
