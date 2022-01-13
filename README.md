@@ -1,1 +1,1 @@
-# note-management
+# Note Management System
