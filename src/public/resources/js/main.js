@@ -9,14 +9,25 @@ const addNote = (ev) => {
     }
     notes.push(note);
     document.forms[0].reset();
-
-    //for displaying inputs
-    console.warn('added', {notes});
-    let pre = document.querySelector('#msg pre');
-    if (pre) {
-        pre.textContent = '\n' + JSON.stringify(notes, '\t', 2);
-    }
+    sendItemToAPI(note);
 }
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('btn').addEventListener('click', addNote);
+    document.getElementById('send').addEventListener('click', addNote);
 });
+
+function sendItemToAPI(value) {
+    var req = new XMLHttpRequest();
+    req.open('POST', '/add'); //we can do /add because right now, at this stage, we're sending post request to same place that we're hosting aka localhost
+    req.setRequestHeader('Content-Type', 'application/json');
+    req.send(JSON.stringify(value));
+
+    req.addEventListener('load', (e) => {
+        //console.log(req.responseText);
+        console.log('Request done!');
+    });
+
+    req.addEventListener('error', () => {
+        console.log('Something bad happened!');
+        console.log(e);
+    });
+}
